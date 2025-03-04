@@ -13,5 +13,10 @@ urlpatterns = [
     path('doctors/', views.doctors, name='doctors'),
     path('appointment/', views.appoint, name='appointment'),
     path('contacts/', views.contacts, name='contacts'),
+    path('show-appointments/', views.showappoint, name='show-appointments'),
+    path('deleteapp/<int:id>', views.deletappoint),
+    path('show-contacts/', views.showcont, name='show-contacts'),
+    path('deletecont/<int:id>', views.deletecont),
+
 
 ]
