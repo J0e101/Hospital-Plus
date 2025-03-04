@@ -16,10 +16,10 @@
         <p><b>Doctor:</b>{{ x.doctor }}</p>
         <p><b>Message:</b>{{ x.message }}</p>
         <p>
-            <a href="" class="text-warning me-4">
+            <a href="{% url 'edit-appointment-details' x.id %}" class="text-warning me-4">
                 <i class="bi bi-pencil"></i>Edit
             </a>
-            <a href="/deleteapp/{{ x.id }}" class="text-danger">
+            <a href="/deleteappoint/{{ x.id }}" class="text-danger">
                 <i class="bi bi-trash"></i>Delete
             </a>
         </p>
@@ -28,10 +28,6 @@
 
     {% endfor %}
     </div>
-
-
-
-
 
 
 {% endblock %}

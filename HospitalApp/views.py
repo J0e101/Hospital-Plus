@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from HospitalApp.models import *
 
 # Create your views here.
@@ -71,5 +71,37 @@ def deletecont(request, id):
     deletecontact= Contact.objects.get(id=id)
     deletecontact.delete()
     return redirect('/show-contacts')
+
+def editappoint(request, id):
+    appointment = get_object_or_404(Appointment, id=id)
+    if request.method == "POST":
+        appointment.name = request.POST.get('name')
+        appointment.email = request.POST.get('email')
+        appointment.phone_number = request.POST.get('phone_number')
+        appointment.date_of_birth = request.POST.get('date_of_birth')
+        appointment.department = request.POST.get('department')
+        appointment.doctor = request.POST.get('doctor')
+        appointment.message = request.POST.get('message')
+
+        appointment.save()
+        return redirect('/show-appointments')
+
+    else:
+        return render(request, 'editappointment.html', {'appointment': appointment})
+
+def editcont(request, id):
+    contact = get_object_or_404(Contact, id=id)
+    if request.method == "POST":
+        contact.name = request.POST.get('name')
+        contact.email = request.POST.get('email')
+        contact.subject = request.POST.get('subject')
+        contact.message = request.POST.get('message')
+
+        contact.save()
+        return redirect('/show-contacts')
+
+    else:
+        return render(request, 'editcontacts.html', {'contact': contact})
+
 
 

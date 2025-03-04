@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path
+
 from HospitalApp import views
 
 urlpatterns = [
@@ -14,9 +15,11 @@ urlpatterns = [
     path('appointment/', views.appoint, name='appointment'),
     path('contacts/', views.contacts, name='contacts'),
     path('show-appointments/', views.showappoint, name='show-appointments'),
-    path('deleteapp/<int:id>', views.deletappoint),
+    path('deleteappoint/<int:id>', views.deletappoint),
     path('show-contacts/', views.showcont, name='show-contacts'),
     path('deletecont/<int:id>', views.deletecont),
+    path('editappoint/<int:id>', views.editappoint, name= 'edit-appointment-details'),
+    path('editcont/<int:id>', views.editcont, name= 'edit-contact-details'),
 
 
 ]

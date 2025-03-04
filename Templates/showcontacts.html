@@ -12,9 +12,14 @@
         <p><b>Subject:</b>{{ x.subject }}</p>
         <p><b>Message:</b>{{ x.message }}</p>
         <p>
+             <a href="{% url 'edit-contact-details' x.id%}">
+                <i class="bi bi-pencil"></i>Edit
+            </a>
+
             <a href="/deletecont/{{ x.id }}" class="text-warning ">
                  <i class="bi bi-trash"></i>Delete
             </a>
+
         </p>
         </div>
 
