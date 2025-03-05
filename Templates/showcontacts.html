@@ -4,9 +4,9 @@
 {% load static %}
 {% block content %}
     <h1 class="text-center">Contacts</h1>
-    <div class="d-flex  gap-3 container">
+    <div class="d-flex  gap-3 container flex-wrap">
     {% for x in contacts %}
-        <div class="card p-3">
+        <div class="card p-3 w-50">
         <p><b>Name:</b>{{ x.name }}</p>
         <p><b>Email:</b>{{ x.email }}</p>
         <p><b>Subject:</b>{{ x.subject }}</p>
