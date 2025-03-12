@@ -19,9 +19,15 @@
             <a href="{% url 'edit-appointment-details' x.id %}" class="text-warning me-4">
                 <i class="bi bi-pencil"></i>Edit
             </a>
+
             <a href="/deleteappoint/{{ x.id }}" class="text-danger">
                 <i class="bi bi-trash"></i>Delete
             </a>
+
+            <!---comment--->
+            <a href="{% url 'pay' %}" class="text-success ms-3">
+                    <i class="bi bi-credit-card"></i>Pay
+                </a>
         </p>
         
         </div>
